@@ -10,9 +10,23 @@ Based on the prisma.io tutorial article [here](https://www.prisma.io/blog/nestjs
 
 Original tutorial code examples can be found [here](https://github.com/TasinIshmam/blog-backend-rest-api-nestjs-prisma).
 
+## Required Local Run Configuration
+
+Requires a `.env` file with a PostgreSQL connection string in the format of:
+```
+DATABASE_URL="postgresql://{account_name}:{password}@localhost:5432/median-db"
+```
+where `{account}` and `{password}` should be replaced with a valid credential set, and `median-db` is the assumed local DB name.
+
 ## Running the app
 
 ```bash
+# install npm dependencies
+$ npm install
+
+# apply DB migrations
+$ npx prisma migrate dev
+
 # development
 $ npm run start
 
